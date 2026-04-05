@@ -3,12 +3,29 @@
 #include <esp_now.h>
 #include <WiFi.h>
 
-MPU6050 mpu;
+MPU6050 mp u;
 
 int16_t gx, gy, gz;
 
 float zAngle = 90, xAngle = 90;
 float gyroBiasZ = 0, gyroBiasX = 0;
+NEW SKETCH
+1011121314151617181920212223
+float gyroBiasZ = 0, gyroBiasX = 0;
+
+unsigned long lastTime = 0;
+unsigned long lastGoodRead = 0;
+const unsigned long MAX_FREEZE_TIME = 2000; // 2 seconds
+
+// Define structure for angle data
+typedef struct struct_message {
+  float xAngle;
+  float zAngle;
+
+Message (Enter to send message to 'ESP32 Dev Module' on 'COM3')
+New Line
+115200 baud
+
 
 unsigned long lastTime = 0;
 unsigned long lastGoodRead = 0;
@@ -126,4 +143,4 @@ void loop() {
   }
 
   delay(50);
-} 
+}
